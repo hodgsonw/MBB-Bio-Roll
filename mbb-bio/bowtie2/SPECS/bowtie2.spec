@@ -20,7 +20,7 @@ Release: 		%{release}
 Source: 		%{name}-%{version}.tar.bz2
 Prefix: 		/opt/bio
 Group: 			Development/Tools
-URL:			http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+URL:			https://github.com/BenLangmead/bowtie2
 AutoReq:		yes
 Packager:	Glen Newton <Glen.Newton@agr.gc.ca>
 
