@@ -3,19 +3,18 @@
 %define name		cd-hit
 %define release		2
 %define prefix		v
-%define version 	4.6.1
-%define date		2012-08-27
+%define version 	4.6.4
+%define date		2015-0603
 %define buildroot %{_topdir}/%{name}-%{version}-root
 %define installroot /opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
 Summary: 		cd-hit
-License: 		GPL-2|https://code.google.com/p/cdhit
+License: 		GPL-2|https://github.com/weizhongli/cdhit
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source: 		%{name}-%{prefix}%{version}-%{date}.tgz
-Patch:			%{name}-%{prefix}%{version}-%{date}-1.patch
+Source: 		%{name}-%{prefix}%{version}-%{date}.tar.gz
 Prefix: 		/opt/bio
 Group: 			Development/Tools
 AutoReq:		yes
@@ -25,13 +24,14 @@ CD-HIT is a program for clustering DNA/protein sequence database at high
 identity with tolerance.
 
 %prep
-%setup -q -n cd-hit-v4.6.1-2012-08-27
-%patch -p1
+%setup -q -n cd-hit-v4.6.4-2015-0603
 
 %build
 make openmp=yes
+for f in *.pl; do sed -i 's/#!\/usr\/bin\/perl/#!\/usr\/bin\/env perl/' ${f}; done
 
 %install
+
 mkdir -p $RPM_BUILD_ROOT%{installroot}
 make install PREFIX=$RPM_BUILD_ROOT%{installroot}
 
