@@ -3,7 +3,7 @@
 %define name		FigTree
 ### define _topdir	 	/home/rpmbuild/rpms/FigTree
 %define release		1
-%define version 	1.3.1
+%define version 	1.4.2
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name} 
 %define __jar_repack	0
@@ -24,7 +24,7 @@ URL:			http://tree.bio.ed.ac.uk/software/figtree/
 FigTree is designed as a graphical viewer of phylogenetic trees and as a program for producing publication-ready figures. As with most of my programs, it was written for my own needs so may not be as polished and feature-complete as a commercial program. In particular it is designed to display summarized and annotated trees produced by BEAST.
 
 %prep
-%setup -q
+%setup -q -n FigTree_v1.4.2
 
 %build
 #jar already created, nothing to build 
