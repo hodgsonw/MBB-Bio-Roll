@@ -1,0 +1,4 @@
+RAM cran 1.2.1
+cairoDevice cran 2.24 "--no-test-load"
+sp
+maptools
