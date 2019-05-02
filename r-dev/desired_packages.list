@@ -1,4 +1,7 @@
-RAM cran 1.2.1
-cairoDevice cran 2.24 "--no-test-load"
+RAM 1.2.1 cran 
+cairoDevice 2.24 cran "--no-test-load"
 sp
-maptools
+
+cummeRbund bioconductor
+
+r-lib/devtools github
